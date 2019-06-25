@@ -11,6 +11,19 @@
 |
 */
 
+$prefixes = [
+ 'prefix' => 'admin', 
+ 'namespace' => 'Admin',
+ 'middleware' => ['auth']
+];
+Route::group($prefixes, function () {
+	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
