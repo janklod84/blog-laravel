@@ -11,6 +11,15 @@
 |
 */
 
+/*
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+*/
+
+
 $prefixes = [
  'prefix' => 'admin', 
  'namespace' => 'Admin',
@@ -23,7 +32,7 @@ Route::group($prefixes, function () {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.home');
 });
 
 Auth::routes();
