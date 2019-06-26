@@ -17,7 +17,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -35,10 +39,12 @@
                     <ul class="navbar-nav mr-auto">
                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Категории</a></li>
-                                <li><a href="#">Материалы</a></li>
-                            </ul>
+                             <ul class="dropdown-menu" role="menu">
+                              <li>
+                               <a href="{{route('admin.category.index')}}">Категории</a>
+                              </li>
+                              <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
+                             </ul>
                        </li>
                     </ul>
 
@@ -82,5 +88,9 @@
             @yield('content')
         </main>
     </div>
+    
+    <!-- Defer -->
+    <script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

@@ -18,6 +18,8 @@ $prefixes = [
 ];
 Route::group($prefixes, function () {
 	Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+	Route::resource('/category', 'CategoryController', ['as'=>'admin']);
+	Route::resource('/article', 'ArticleController', ['as'=>'admin']);
 });
 
 Route::get('/', function () {
