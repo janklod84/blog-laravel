@@ -1,3 +1,4 @@
+<!-- Создает вложность категория -->
 @foreach ($categories as $category)
  <option value="{{$category->id ?? ""}}"
  
